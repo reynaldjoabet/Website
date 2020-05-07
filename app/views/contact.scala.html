@@ -1,35 +1,13 @@
 @(form: Form[Message])(implicit requestHeader:RequestHeader)
-<!DOCTYPE html>
-<html lang="en">
+@main("contact"){
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="" >
         <link rel="stylesheet" media="screen" type="text/css" href=@routes.Assets.versioned("stylesheets/contact.css") >
-        <title>  Contact</title>
     </head>
-    <body>
 
-            <!--Navigation-->
-        <nav class="navigation" >
-            <div class="logo">
-                <h1> Wagni</h1>
-            </div>
-            <ul class="navigation-menu">
-                <li ><a href="@routes.HomeController.index()">Home</a></li>
-                <li ><a href="@routes.HomeController.quiz()">Quiz</a></li>
-                <li ><a href="@routes.HomeController.contact()">Contact</a></li>
-            </ul >
-            <div class="burger">
+            <!-- Start of main content-->
 
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-            <!-- Satrt of main content-->
+            <!-- Start of contact form-->
 
-            <!-- Satrt of contact form-->
         <form action="@routes.HomeController.contact()" method="post">
             @helper.CSRF.formField
             <div class="contact-form">
@@ -62,16 +40,6 @@
                 We are always glad to get questions from our students.
     </p>
         </main>
-            <!--Start of footer-->
-        <footer class="site-footer">
-                <!--using JavaScript to automatically use the current date, instead of inputting manually every-->
-            <p>
-    Copyright &copy;<script>
-        document.write(new Date().getFullYear().toString());
-    </script>,Wagni Inc
-            </p>
 
-        </footer>
         <script src=@routes.Assets.versioned("javascripts/index.js") type="text/javascript"></script>
-    </body>
-</html>
+    }
