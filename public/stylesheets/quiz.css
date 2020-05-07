@@ -1,0 +1,379 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: white;
+
+    padding-bottom: 58px;
+
+}
+
+/*quiz content*/
+
+
+.btn{
+    display: inline-block;
+    background: #343a34;
+    padding: 18px 0;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 5px;
+
+
+}
+.quiz{
+    max-width: 700px;
+    min-height: 500px;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 35px;
+}
+.question-number,
+.question,
+.options,
+.button{
+    float: left;
+    width: 100%;
+}
+
+.question-number h3{
+    color: #343a34;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.question{
+    font-size: 22px;
+    color: #343a34;
+    padding: 20px 0;
+}
+
+
+.options div{
+    margin-left: 0px;
+    background-color:rebeccapurple;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+}
+.options div.disabled{
+    pointer-events: none;
+}
+
+.options div.correct{
+    z-index: 1;
+    color: #fff;
+
+}
+.options div.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    z-index: -1;
+    transform: translateX(-100%);
+    animation: animateBackground  1s ease;
+    animation-fill-mode : forwards;
+}
+
+
+@keyframes animateBackground{
+    0%{transform: translateX(-100%);
+
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.options div.wrong{
+    z-index: 1;
+    color: #fff;
+
+}
+.options div.wrong::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: -1;
+    transform: translateX(-100%);
+    animation: animateBackground  1s ease;
+    animation-fill-mode : forwards;
+}
+
+
+@keyframes animateBackground{
+    0%{transform: translateX(-100%);
+
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.quiz-over{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0,0, 0.9);
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.quiz-over.show{
+    display: flex;
+}
+.quiz-over .box{
+    background-color: #009688;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 700px;
+    flex-basis: 700px;
+    color: #ffffff;
+
+}
+
+
+.quiz-over .box h1{
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+.quiz-over .box button{
+    padding: 15px 50px;
+    border: none;
+    border-color: #FF9800;
+    border-radius:  5px;
+    font-size: 16px;
+    margin: 15px 0 20px;
+    color:#343a34;
+
+}
+/*main content*/
+main{
+    width: 90vw;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/*Footer*/
+.site-footer{
+    background-color: #343a34;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+}
+
+
+
+
+/* logo*/
+.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+    padding-right: 15%;
+
+}
+
+
+
+
+/* navigation*/
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 15vh;
+    background-color: #343a34;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* navigation-menu*/
+.navigation-menu{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.navigation-menu li{
+    list-style: none;
+}
+.navigation-menu a{
+    padding-left: 50%;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.navigation-menu a:hover{
+    color:palevioletred;
+
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries*/
+/* breakpoints based on content for tablet*/
+@media screen and (max-width:1024px){
+
+    .navigation-menu{
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+    .logo{
+
+        padding-left: 10%;
+
+    }
+    .navigation-menu a{
+        padding-left: 10%;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+
+
+
+    /* breakpoints based on content for tablet ends here*/
+}
+
+
+
+
+
+
+
+/* breakpoints based on content for mobile*/
+@media screen and (max-width:768px){
+    .logo{
+
+        padding-left: 15%;
+
+    }
+    body{
+        overflow-x: hidden;
+
+    }
+    .navigation-menu{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #343a34;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 28%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .navigation-menu li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+
+    .navigation-active{
+        transform: translateX(0%);
+    }
+    @keyframes navigationMenuFade {
+        from{
+            opacity: 0;
+            transform: translateX(50%);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+    .toggle .line1{
+        transform:rotate(-45deg )translate(-5px,6px);
+    }
+
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform:rotate(45deg )translate(-5px,-6px);
+    }
+    .quiz-over .box{
+
+        max-width: 300px;
+        flex-basis: 300px;
+
+
+    }
+    .options div{
+        margin-right: 170px;
+
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 15px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .question{
+        font-size: 18px;
+        padding-left: 140px;
+        color: #343a34;
+        padding: 20px 0;
+    }
+    .question-number h3{
+        color: #343a34;
+
+        margin-right: 20px;
+    }
+    .quiz{
+        max-width: 400px;
+        min-height: 400px;
+        margin: 20px auto;
+        border-radius: 3px;
+        padding: 20px;
+    }
+    /* breakpoints based on content for mobile ends here*/
+}

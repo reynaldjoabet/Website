@@ -1,0 +1,61 @@
+@()
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="" >
+        <link rel="stylesheet" media="screen" type="text/css" href=@routes.Assets.versioned("stylesheets/index.css") >
+        <title> Home</title>
+    </head>
+    <body>
+
+            <!--Navigation-->
+        <nav class="navigation" >
+            <div class="logo">
+                <h1> Wagni</h1>
+            </div>
+            <ul class="navigation-menu">
+                <li ><a href="@routes.HomeController.index()">Home</a></li>
+                <li ><a href="@routes.HomeController.quiz()">Quiz</a></li>
+                <li ><a href="@routes.HomeController.contact()">Contact</a></li>
+
+            </ul >
+            <div class="burger">
+
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <p class="quiz">
+            Welcome to Wagni
+        </p>
+
+            <!-- Satrt of main content-->
+        <main>
+                <!-- Image taken from https://www.google.com/url?sa=i&source=imgres&cd=&ved=2ahUKEwiZgPiz3I7pAhVOUhoKHZMSB98QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F758504762222586333%2F&psig=AOvVaw1_0kj1L6Hu8G6wMwDkXAsc&ust=1588287031212139-->
+            <img  class="image"  src=@routes.Assets.versioned("images/image.png") alt="mylogo">
+            <p>
+
+                We offer the best certified online courses on CSS, JavaScript,PHP and HTML.
+                We focus on hands-on exercises and examples.
+                Throughout the course, you will work with over 10 projects, in a bid to enhance your coding skills.
+                The journey of a thousand miles begins with us at Wagni<br>
+                <a class="btn" href="@routes.HomeController.quiz()"> start</a>
+            </p>
+        </main>
+            <!--Start of footer-->
+        <footer class="site-footer">
+                <!--using JavaScript to automatically use the current date, instead of inputing manually every-->
+            <p>
+                Copyright &copy;<script>
+                    document.write(new Date().getFullYear().toString());
+            </script>,Wagni Inc
+            </p>
+
+        </footer>
+            <!-- loaded here so that it helps improve user experience as the page will load before the script-->
+        <script src=@routes.Assets.versioned("javascripts/index.js") type="text/javascript"></script>
+    </body>
+</html>

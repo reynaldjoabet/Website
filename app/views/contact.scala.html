@@ -1,0 +1,77 @@
+@(form: Form[Message])(implicit requestHeader:RequestHeader)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="" >
+        <link rel="stylesheet" media="screen" type="text/css" href=@routes.Assets.versioned("stylesheets/contact.css") >
+        <title>  Contact</title>
+    </head>
+    <body>
+
+            <!--Navigation-->
+        <nav class="navigation" >
+            <div class="logo">
+                <h1> Wagni</h1>
+            </div>
+            <ul class="navigation-menu">
+                <li ><a href="@routes.HomeController.index()">Home</a></li>
+                <li ><a href="@routes.HomeController.quiz()">Quiz</a></li>
+                <li ><a href="@routes.HomeController.contact()">Contact</a></li>
+            </ul >
+            <div class="burger">
+
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+            <!-- Satrt of main content-->
+
+            <!-- Satrt of contact form-->
+        <form action="@routes.HomeController.contact()" method="post">
+            @helper.CSRF.formField
+            <div class="contact-form">
+
+                <h1> Have a question? Aks us!</h1>
+                <div class="txtb">
+
+                    <label> Names: </label>
+                    <input type="text" name="name" value="" placeholder="Full Names" required>
+                </div>
+                <div class="txtb">
+
+                    <label> Email: </label>
+                    <input type="email" name="email" value="" placeholder="Your Email" required>
+                </div>
+                <div class="txtb">
+
+                    <label> Message: </label>
+                    <textarea></textarea>
+                </div>
+                <button type="submit" class="btn" name="submit"> Submit</button>
+            </div>
+
+        </form>
+        <main>
+            <p>
+
+        We are here to help answer any of your questions.<br>
+                Remember the best way to learn is to always ask questions.<br>
+                We are always glad to get questions from our students.
+    </p>
+        </main>
+            <!--Start of footer-->
+        <footer class="site-footer">
+                <!--using JavaScript to automatically use the current date, instead of inputting manually every-->
+            <p>
+    Copyright &copy;<script>
+        document.write(new Date().getFullYear().toString());
+    </script>,Wagni Inc
+            </p>
+
+        </footer>
+        <script src=@routes.Assets.versioned("javascripts/index.js") type="text/javascript"></script>
+    </body>
+</html>

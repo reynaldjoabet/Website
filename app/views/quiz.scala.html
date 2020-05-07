@@ -1,0 +1,81 @@
+@()
+<!DOCTYPE html>
+<contactForm lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="" >
+        <link rel="stylesheet" media="screen" type="text/css" href=@routes.Assets.versioned("stylesheets/quiz.css") >
+        <title>  Quiz</title>
+    </head>
+    <body>
+
+            <!--Navigation-->
+        <nav class="navigation" >
+            <div class="logo">
+                <h1> Wagni</h1>
+            </div>
+            <ul class="navigation-menu">
+                <li ><a href="@routes.HomeController.index()">Home</a></li>
+                <li ><a href="@routes.HomeController.quiz()">Quiz</a></li>
+                <li ><a href="@routes.HomeController.contact()">Contact</a></li>
+            </ul >
+            <div class="burger">
+
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+
+            <!-- Start of the quiz content-->
+        <div class="quiz">
+            <div class="question-number">
+                <h3>
+        Question <span class="question-num-value"> 1</span> of <span class="total-question"> </span></h3>
+            </div>
+            <div class="question">
+
+</div>
+                <!--using &lt and &gt to escape contactForm tags -->
+            <div class="options">
+
+                <div id="1" class="option1" onclick="check(this)"> </div>
+                <div id="2" class="option2" onclick="check(this)"> </div>
+                <div id="3" class="option3" onclick="check(this)"> </div>
+                <div id="4" class="option4" onclick="check(this)"> </div>
+            </div>
+            <div class="button">
+                <button type="button" class="btn"  onclick="nextQuestion()"> next</button>
+            </div>
+
+        </div>
+        <div class="quiz-over">
+            <div class="box">
+                <h1>
+        Good Attempt<br>
+                    Had <span class="correct-answers"></span> out of <span class="total-question2"></span>
+                    correct! <br>
+
+    </h1>
+                <button type="button"   onclick="anotherAttempt()"> AttemptAgain</button>
+            </div>
+        </div>
+            <!-- Satrt of main content-->
+        <main>
+
+</main>
+            <!--Start of footer-->
+        <footer class="site-footer">
+                <!--using JavaScript to automatically use the current date, instead of inputing manually every-->
+            <p>
+    Copyright &copy;<script>
+        document.write(new Date().getFullYear().toString());
+    </script>,Wagni Inc
+            </p>
+
+        </footer>
+            <!-- loaded here so that it helps improve user experience as the page will load before the script-->
+        <script src=@routes.Assets.versioned("javascripts/quiz.js") type="text/javascript"></script>
+    </body>
+</contactForm>
